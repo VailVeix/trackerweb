@@ -1,0 +1,26 @@
+div.CardOn{
+    background-color: #ffffff;
+    color: black;
+}
+
+div.CardOff{
+	background-color: #878190;
+    color: #c3c0c7;
+}
+
+Button.CardOn{
+    background-color: #ffbe5d;
+}
+
+Button.CardOff{
+    background-color: #c3c0c7;
+}
+
+div.Task-item{
+    height: 100px;
+}
+
+div.Task-name{
+    display: inline;
+    margin-left: 12px;
+}

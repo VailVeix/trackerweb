@@ -1,0 +1,21 @@
+div.Category-Card{
+    background-color: #edecee;
+    padding: 8px;
+    width: 500px;
+}
+
+h2.Category-Name{
+    color: black;
+    margin: 4px;
+}
+
+.Task-new-container{
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.Task-new{
+    width: 100%;
+    flex-grow: 1;
+}
