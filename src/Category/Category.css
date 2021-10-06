@@ -10,12 +10,16 @@ h2.Category-Name{
 }
 
 .Task-new-container{
-    width: 100%;
     margin-bottom: 10px;
-    display: flex;
 }
 
 .Task-new{
     width: 100%;
-    flex-grow: 1;
+    resize: none;
+    background-color: #e0dfe1;
+    border-color: transparent;
+    overflow: hidden;
+    padding: 12px;
+    font-size: 14px;
+    box-sizing: border-box;
 }

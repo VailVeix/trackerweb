@@ -1,6 +1,6 @@
 import { Button, Card, CardContent} from '@material-ui/core';
 import React from 'react';
-import Task from './Task.js';
+import Task from '../Task/Task.js';
 import './Category.css';
 
 
@@ -17,7 +17,7 @@ class Category extends React.Component{
                 <Card className="Category-Card" variant='outlined'>
                     <div className='Task-new-container'>
                         <form>
-                            <input className='Task-new' type="text" name="Task-new"/>
+                            <textarea className='Task-new' rows='1' name="Task-new" placeholder='Category Name'/>
                         </form>
                     </div>
                     <Task />

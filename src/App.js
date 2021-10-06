@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Category from './Category.js';
+import Category from './Category/Category.js';
 
 
 function App() {
@@ -10,10 +10,6 @@ function App() {
            	Task Tracker
         </header>
         <body className='App-body'>
-            <Category/>
-            <Category/>
-            <Category/>
-            <Category/>
             <Category/>
             <Category/>
             <Category/>
