@@ -1,3 +1,36 @@
+.Task-container{
+    display: flex;
+    margin-bottom: 2px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(26,24,29,.16),0 1px 4px 0 rgba(26,24,29,.12);
+    box-shadow: 0 2px 2px 0 rgba(26,24,29,.16),0 1px 4px 0 rgba(26,24,29,.12);
+    background: #fff;
+    border-radius: 2px;
+    position: relative;
+}
+
+.Task-button-container{
+    background-color: #ff944c;
+    justify-content: center;
+    display: flex;
+    padding: 6px;
+}
+
+.Task-info-container{
+    flex-grow: 1;
+    padding: 8px;
+}
+
+.Task-button{
+}
+
+.Task-name{
+    margin-top: 8px;
+}
+
+.Task-description{
+    font-size: small;
+}
+
 div.CardOn{
     background-color: #ffffff;
     color: black;
@@ -9,18 +42,9 @@ div.CardOff{
 }
 
 Button.CardOn{
-    background-color: #ffbe5d;
+    background-color: #ffc9a6;
 }
 
 Button.CardOff{
     background-color: #c3c0c7;
-}
-
-div.Task-item{
-    height: 100px;
-}
-
-div.Task-name{
-    display: inline;
-    margin-left: 12px;
 }

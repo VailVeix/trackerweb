@@ -1,27 +1,37 @@
-import { Button, Card, CardContent} from '@material-ui/core';
-import React from 'react';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+import React, { useState } from 'react';
 import './Task.css';
 
-class Task extends React.Component{
-	constructor(props){
-		super(props);
-		this.state = {on: true};
-	}
+const useStyles = makeStyles(() => ({
+    Button: {
+        minWidth: 0,
+        marginTop: 8,
+        height: 28,
+        width: 28
+    }
+}));
 
-	buttonPush(){
-		return ()=>this.setState({on: !this.state.on})
-	}
+function Task() {
+    const [cardState, setCardState] = useState(true);
 
-	render(){
-		return(
-			<Card classes={{root: this.state.on?"CardOn":"CardOff"}} className='Task-item'>
-				<CardContent>
-					<Button classes={{root: this.state.on?"CardOn":"CardOff"}} variant="contained" onClick={this.buttonPush()}>Button</Button>
-                    <div className='Task-name'>Task Item</div>
-				</CardContent>
-			</Card>
-		);
-	}
-}
+    const buttonPush = () => {
+        return () => setCardState(false);
+    }
+
+    const classes = useStyles();
+
+    return (
+        <div className={`Task-container ${cardState ? "CardOn" : "CardOff"}`} >
+            <div className='Task-button-container'>
+                <Button className={`Task-button ${cardState ? "CardOn" : "CardOff"} ${classes.Button}`} onClick={buttonPush}></Button>
+            </div>
+            <div className='Task-info-container'>
+                <div className='Task-name'>Task Item</div>
+                <p className='Task-description'>This is the task description</p>
+            </div>
+        </div >
+    );
+};
 
 export default Task;

@@ -1,12 +1,17 @@
 div.Category-Card{
     background-color: #edecee;
     padding: 8px;
-    width: 500px;
+    display: flex;
+    flex-direction: column;
+    max-width: 600;
 }
 
 h2.Category-Name{
     color: black;
     margin: 4px;
+    font-size: medium;
+    letter-spacing: -.5px;
+    max-width: 600;
 }
 
 .Task-new-container{
@@ -22,4 +27,11 @@ h2.Category-Name{
     padding: 12px;
     font-size: 14px;
     box-sizing: border-box;
+}
+
+.Category-container{
+    display: flex;
+    flex-direction: column;
+    flex-grow:1;
+    padding: 12px;
 }
