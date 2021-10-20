@@ -16,14 +16,19 @@ function Task() {
     const [cardState, setCardState] = useState(true);
 
     const buttonPush = () => {
-        return () => setCardState(false);
+        if (cardState) {
+            setCardState(false);
+        }
+        else {
+            setCardState(true);
+        }
     }
 
     const classes = useStyles();
 
     return (
         <div className={`Task-container ${cardState ? "CardOn" : "CardOff"}`} >
-            <div className='Task-button-container'>
+            <div className={`Task-button-container ${cardState ? "" : "CardOff"}`}>
                 <Button className={`Task-button ${cardState ? "CardOn" : "CardOff"} ${classes.Button}`} onClick={buttonPush}></Button>
             </div>
             <div className='Task-info-container'>

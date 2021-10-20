@@ -37,8 +37,7 @@ div.CardOn{
 }
 
 div.CardOff{
-	background-color: #878190;
-    color: #c3c0c7;
+    color: #939393;
 }
 
 Button.CardOn{
@@ -46,5 +45,5 @@ Button.CardOn{
 }
 
 Button.CardOff{
-    background-color: #c3c0c7;
+    background-color: #939393;
 }
