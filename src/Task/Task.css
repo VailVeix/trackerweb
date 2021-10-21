@@ -1,3 +1,4 @@
+/* Task Container */
 .Task-container{
     display: flex;
     margin-bottom: 2px;
@@ -6,44 +7,78 @@
     background: #fff;
     border-radius: 2px;
     position: relative;
+    background-color: #ffffff;
+    color: black;
 }
 
+.Task-container-off{
+    color: #939393;
+}
+
+/* Task Button Container */
 .Task-button-container{
-    background-color: #ff944c;
     justify-content: center;
     display: flex;
     padding: 6px;
 }
 
+.Task-button-container-off{
+    background-color: #878190;
+}
+
+.Task-button-container-redder{
+    background-color: #de3f3f;
+}
+
+.Task-button-container-red{
+    background-color: #ff6165;
+}
+
+.Task-button-container-orange{
+    background-color: #ff944c;
+}
+
+.Task-button-container-yellow{
+    background-color: #ffbe5d;
+}
+
+.Task-button-container-green{
+    background-color: #24cc8f;
+}
+
+.Task-button-container-blue{
+    background-color: #3bcad7;
+}
+
+.Task-button-container-bluer{
+    background-color: #50b5e9;
+}
+
+.Task-button-container-purple{
+    background-color: #925cf3;
+}
+
+/* Task Button */
+Button.Task-button{
+    background:hsla(0,0%,100%,.5)
+}
+
+Button.Task-button-off{
+    background-color: #c3c0c7;
+}
+
+/* Task Info Container */
 .Task-info-container{
     flex-grow: 1;
     padding: 8px;
 }
 
-.Task-button{
-}
-
+/* Task Name */
 .Task-name{
     margin-top: 8px;
 }
 
+/* Task Description */
 .Task-description{
     font-size: small;
-}
-
-div.CardOn{
-    background-color: #ffffff;
-    color: black;
-}
-
-div.CardOff{
-    color: #939393;
-}
-
-Button.CardOn{
-    background-color: #ffc9a6;
-}
-
-Button.CardOff{
-    background-color: #939393;
 }

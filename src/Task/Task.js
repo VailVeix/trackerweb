@@ -27,9 +27,9 @@ function Task() {
     const classes = useStyles();
 
     return (
-        <div className={`Task-container ${cardState ? "CardOn" : "CardOff"}`} >
-            <div className={`Task-button-container ${cardState ? "" : "CardOff"}`}>
-                <Button className={`Task-button ${cardState ? "CardOn" : "CardOff"} ${classes.Button}`} onClick={buttonPush}></Button>
+        <div className={`Task-container ${cardState ? "" : "Task-container-off"}`} >
+            <div className={`Task-button-container ${cardState ? "Task-button-container-orange" : "Task-button-container-off"}`}>
+                <Button className={`Task-button ${cardState ? "" : "Task-button-off"} ${classes.Button}`} onClick={buttonPush}></Button>
             </div>
             <div className='Task-info-container'>
                 <div className='Task-name'>Task Item</div>

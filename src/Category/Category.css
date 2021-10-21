@@ -3,7 +3,6 @@ div.Category-Card{
     padding: 8px;
     display: flex;
     flex-direction: column;
-    max-width: 600;
 }
 
 h2.Category-Name{
@@ -11,7 +10,6 @@ h2.Category-Name{
     margin: 4px;
     font-size: medium;
     letter-spacing: -.5px;
-    max-width: 600;
 }
 
 .Task-new-container{
@@ -34,4 +32,5 @@ h2.Category-Name{
     flex-direction: column;
     flex-grow:1;
     padding: 12px;
+    max-width: 600px;
 }

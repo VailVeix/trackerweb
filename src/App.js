@@ -11,9 +11,6 @@ function App() {
             </header>
             <div className='App-body'>
                 <Category />
-                <Category />
-                <Category />
-                <Category />
             </div>
         </div>
     );
