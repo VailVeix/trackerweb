@@ -12,8 +12,9 @@ const useStyles = makeStyles(() => ({
     }
 }));
 
-function Task() {
-    const [cardState, setCardState] = useState(true);
+function Task(props) {
+    const [cardState, setCardState] = useState(!props.off);
+    const [cardColor] = useState(props.color);
 
     const buttonPush = () => {
         if (cardState) {
@@ -28,12 +29,12 @@ function Task() {
 
     return (
         <div className={`Task-container ${cardState ? "" : "Task-container-off"}`} >
-            <div className={`Task-button-container ${cardState ? "Task-button-container-orange" : "Task-button-container-off"}`}>
+            <div className={`Task-button-container ${cardState ? cardColor : "Task-button-container-off"}`}>
                 <Button className={`Task-button ${cardState ? "" : "Task-button-off"} ${classes.Button}`} onClick={buttonPush}></Button>
             </div>
             <div className='Task-info-container'>
-                <div className='Task-name'>Task Item</div>
-                <p className='Task-description'>This is the task description</p>
+                <div className='Task-name'>{props.name}</div>
+                <p className='Task-description'>{props.description}</p>
             </div>
         </div >
     );
