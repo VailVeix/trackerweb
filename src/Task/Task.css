@@ -11,6 +11,12 @@
     color: black;
 }
 
+.Task-container:hover{
+    box-shadow: 0 1px 8px 0 rgba(26,24,29,.12),0 4px 4px 0 rgba(26,24,29,.16);
+    border: solid #36205d;
+    border-width: thin;
+}
+
 .Task-container-off{
     color: #939393;
 }
@@ -71,14 +77,24 @@ Button.Task-button-off{
 .Task-info-container{
     flex-grow: 1;
     padding: 8px;
+    cursor: pointer;
 }
 
 /* Task Name */
 .Task-name{
     margin-top: 8px;
+    margin-bottom: 4px;
 }
 
 /* Task Description */
 .Task-description{
-    font-size: small;
+    font-size: 11px;
+    margin-left: 2px;
+}
+
+.Task-last-complete{
+    font-size:xx-small;
+    font-style: italic;
+    color: rgb(121, 121, 121);
+    text-align: right;
 }

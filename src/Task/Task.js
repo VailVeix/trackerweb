@@ -12,17 +12,43 @@ const useStyles = makeStyles(() => ({
     }
 }));
 
+const taskRatingToColor = (rating) => {
+    var classStyle = "Task-button-container-";
+    switch (rating) {
+        case 0:
+            return classStyle + "off";
+        case 1:
+            return classStyle + "redder";
+        case 2:
+            return classStyle + "red";
+        case 3:
+            return classStyle + "orange";
+        case 4:
+            return classStyle + "yellow";
+        case 5:
+            return classStyle + "green";
+        case 6:
+            return classStyle + "blue";
+        case 7:
+            return classStyle + "bluer";
+        case 8:
+            return classStyle + "purple";
+    }
+}
+
+const lastCompleteDate = (date) => {
+    if (date == "")
+        return "";
+    else
+        return "Last Completed: " + date;
+}
+
 function Task(props) {
-    const [cardState, setCardState] = useState(!props.off);
-    const [cardColor] = useState(props.color);
+    const [cardState, setCardState] = useState(!props.taskInfo.off);
+    const [cardColor] = useState(taskRatingToColor(props.taskInfo.rating));
 
     const buttonPush = () => {
-        if (cardState) {
-            setCardState(false);
-        }
-        else {
-            setCardState(true);
-        }
+        setCardState(!cardState);
     }
 
     const classes = useStyles();
@@ -33,8 +59,9 @@ function Task(props) {
                 <Button className={`Task-button ${cardState ? "" : "Task-button-off"} ${classes.Button}`} onClick={buttonPush}></Button>
             </div>
             <div className='Task-info-container'>
-                <div className='Task-name'>{props.name}</div>
-                <p className='Task-description'>{props.description}</p>
+                <div className='Task-name'>{props.taskInfo.name}</div>
+                <div className='Task-description'>{props.taskInfo.description}</div>
+                <div className='Task-last-complete'>{lastCompleteDate(props.taskInfo.lastComplete)}</div>
             </div>
         </div >
     );

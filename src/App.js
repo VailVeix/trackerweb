@@ -1,30 +1,53 @@
 import React from 'react';
-import './App.css';
 import Category from './Category/Category.js';
+import './App.css';
 
+const tasks = [{
+    "name": "My Tasks", "tasks": [
+        { "name": "Vacuum", "description": "", "rating": 1, "off": false, "lastComplete": "2021-10-20", "streak": 1 },
+        { "name": "Cat Litter", "description": "", "rating": 2, "off": false, "lastComplete": "", "streak": 2 },
+        { "name": "Change Bed Sheets", "description": "", "rating": 3, "off": false, "lastComplete": "2021-10-20", "streak": 5 },
+        { "name": "Microwave", "description": "", "rating": 4, "off": false, "lastComplete": "2021-10-20", "streak": 3 },
+        { "name": "Empty Old Food From Fridge", "description": "compost applicable materials", "rating": 5, "off": false, "lastComplete": "2021-10-20", "streak": 0 },
+        { "name": "Bong", "description": "", "rating": 6, "off": false, "lastComplete": "2021-10-20", "streak": 2 },
+        { "name": "Toilet", "description": "", "rating": 7, "off": false, "lastComplete": "2021-10-20", "streak": 0 },
+        { "name": "Tub", "description": "", "rating": 8, "off": false, "lastComplete": "2021-10-20", "streak": 4 },
+        { "name": "Dust Desk", "description": "", "rating": 4, "off": true, "lastComplete": "2021-10-20", "streak": 1 }
+    ]
+}];
 
 function App() {
-    const tasks = [
-        { "name": "Task Name 1", "description": "this is a description", "rating": 1, "off": false },
-        { "name": "Task Name 2", "description": "this is a description", "rating": 2, "off": false },
-        { "name": "Task Name 3", "description": "this is a description", "rating": 3, "off": false },
-        { "name": "Task Name 4", "description": "this is a description", "rating": 4, "off": false },
-        { "name": "Task Name 5", "description": "this is a description", "rating": 5, "off": false },
-        { "name": "Task Name 6", "description": "this is a description", "rating": 6, "off": false },
-        { "name": "Task Name 7", "description": "this is a description", "rating": 7, "off": false },
-        { "name": "Task Name 8", "description": "this is a description", "rating": 8, "off": false },
-        { "name": "Task Name 9", "description": "this is a description", "rating": 4, "off": true },];
-
     return (
         <div className="App">
             <header className="App-header">
                 Task Tracker
             </header>
             <div className='App-body'>
-                <Category name="Category Name" tasks={tasks} />
+                {tasks.map((category) => (
+                    <Category name={category.name} tasks={category.tasks} />
+                ))}
             </div>
         </div>
     );
 }
 
 export default App;
+
+/*
+TODO LIST:
+right click- open edit window
+task text submit/make new task
+left click complete whole box
+#times complete counter
+move completed tasks to bottom, order by complete/not complete, then next due date
+add checkmark svg
+edit box creation- add frequency, etc
+default frequency setting
+custom colors
+add tags
+sort by tags
+edit styles to zoom in
+low/med/high tags
+change how add task
+
+*/
