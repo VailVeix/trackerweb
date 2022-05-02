@@ -3,16 +3,16 @@ import Category from './Category/Category.js';
 import './App.css';
 
 const tasks = [{
-    "name": "My Tasks", "tasks": [
-        { "name": "Vacuum", "description": "", "rating": 1, "off": false, "lastComplete": "2021-10-20", "streak": 1 },
-        { "name": "Cat Litter", "description": "", "rating": 2, "off": false, "lastComplete": "", "streak": 2 },
-        { "name": "Change Bed Sheets", "description": "", "rating": 3, "off": false, "lastComplete": "2021-10-20", "streak": 5 },
-        { "name": "Microwave", "description": "", "rating": 4, "off": false, "lastComplete": "2021-10-20", "streak": 3 },
-        { "name": "Empty Old Food From Fridge", "description": "compost applicable materials", "rating": 5, "off": false, "lastComplete": "2021-10-20", "streak": 0 },
-        { "name": "Bong", "description": "", "rating": 6, "off": false, "lastComplete": "2021-10-20", "streak": 2 },
-        { "name": "Toilet", "description": "", "rating": 7, "off": false, "lastComplete": "2021-10-20", "streak": 0 },
-        { "name": "Tub", "description": "", "rating": 8, "off": false, "lastComplete": "2021-10-20", "streak": 4 },
-        { "name": "Dust Desk", "description": "", "rating": 4, "off": true, "lastComplete": "2021-10-20", "streak": 1 }
+    "name": "Opening Shift", "tasks": [
+        { "name": "Drink Water", "description": "Take meds", "rating": 3, "off": false, "lastComplete": "", "streak": 0 },
+    ]
+},
+{
+    "name": "Closing Duties", "tasks": [
+        { "name": "Phone, Meds, Alarm", "description": "", "rating": 3, "off": false, "lastComplete": "", "streak": 0 },
+        { "name": "Clean Off Desk", "description": "", "rating": 3, "off": false, "lastComplete": "", "streak": 0 },
+        { "name": "Pick Up Trash", "description": "", "rating": 3, "off": false, "lastComplete": "", "streak": 0 },
+        { "name": "Refill Waters", "description": "", "rating": 3, "off": false, "lastComplete": "", "streak": 0 },
     ]
 }];
 
@@ -22,10 +22,14 @@ function App() {
             <header className="App-header">
                 Task Tracker
             </header>
-            <div className='App-body'>
+            <div className='App-content-wrapper'>
+                <div className='App-sidebar'></div>
+                <div className='App-break'></div>
+                <div className='App-body'>
                 {tasks.map((category) => (
                     <Category name={category.name} tasks={category.tasks} />
                 ))}
+                </div>
             </div>
         </div>
     );

@@ -7,13 +7,12 @@ div.Category-Card{
 
 h2.Category-Name{
     color: black;
-    margin: 4px;
-    font-size: medium;
-    letter-spacing: -.5px;
+    margin-bottom: 8px;
+    font-size: 18px;
 }
 
 .Task-new-container{
-    margin-bottom: 10px;
+    margin-top: 8px;
 }
 
 .Task-new{
@@ -22,7 +21,7 @@ h2.Category-Name{
     background-color: #e0dfe1;
     border-color: transparent;
     overflow: hidden;
-    padding: 12px;
+    padding: 6px;
     font-size: 14px;
     box-sizing: border-box;
 }

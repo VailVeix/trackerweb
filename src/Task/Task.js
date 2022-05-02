@@ -6,9 +6,9 @@ import './Task.css';
 const useStyles = makeStyles(() => ({
     Button: {
         minWidth: 0,
-        marginTop: 8,
-        height: 28,
-        width: 28
+        marginTop: 0,
+        height: 24,
+        width: 24
     }
 }));
 

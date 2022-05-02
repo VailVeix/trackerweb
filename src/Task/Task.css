@@ -25,7 +25,7 @@
 .Task-button-container{
     justify-content: center;
     display: flex;
-    padding: 6px;
+    padding: 8px 8px 8px 8px;
 }
 
 .Task-button-container-off{
@@ -76,20 +76,24 @@ Button.Task-button-off{
 /* Task Info Container */
 .Task-info-container{
     flex-grow: 1;
-    padding: 8px;
     cursor: pointer;
 }
 
 /* Task Name */
 .Task-name{
-    margin-top: 8px;
+    margin-top: 4px;
     margin-bottom: 4px;
+    margin-left: 4px;
+    font-size: small;
+    color: #202020;
 }
 
 /* Task Description */
 .Task-description{
-    font-size: 11px;
-    margin-left: 2px;
+    font-size: x-small;
+    color: grey;
+    margin-bottom: 4px;
+    margin-left: 4px;
 }
 
 .Task-last-complete{
