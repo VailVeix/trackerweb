@@ -3,18 +3,229 @@ import Category from './Category/Category.js';
 import './App.css';
 
 const tasks = [{
-    "name": "Opening Shift", "tasks": [
-        { "name": "Drink Water", "description": "Take meds", "rating": 3, "off": false, "lastComplete": "", "streak": 0 },
-    ]
-},
-{
-    "name": "Closing Duties", "tasks": [
-        { "name": "Phone, Meds, Alarm", "description": "", "rating": 3, "off": false, "lastComplete": "", "streak": 0 },
-        { "name": "Clean Off Desk", "description": "", "rating": 3, "off": false, "lastComplete": "", "streak": 0 },
-        { "name": "Pick Up Trash", "description": "", "rating": 3, "off": false, "lastComplete": "", "streak": 0 },
-        { "name": "Refill Waters", "description": "", "rating": 3, "off": false, "lastComplete": "", "streak": 0 },
-    ]
-}];
+        "name": "Opening Shift",
+        "tasks": [{
+            "name": "Drink Water",
+            "description": "Take meds",
+            "rating": 3,
+            "off": false,
+            "nextDue": "Tomorrow",
+            "lastComplete": "Tomorrow",
+            "streak": 0,
+            "completions": {}
+        }, ]
+    },
+    {
+        "name": "Opening Shift 2",
+        "tasks": [{
+            "name": "Drink Water",
+            "description": "Take meds",
+            "rating": 3,
+            "off": false,
+            "nextDue": "Tomorrow",
+            "lastComplete": "Tomorrow",
+            "streak": 0,
+            "completions": {}
+        }, ]
+    },
+    {
+        "name": "Opening Shift 3",
+        "tasks": [{
+            "name": "Drink Water",
+            "description": "Take meds",
+            "rating": 3,
+            "off": false,
+            "nextDue": "Tomorrow",
+            "lastComplete": "Tomorrow",
+            "streak": 0,
+            "completions": {}
+        }, ]
+    },
+    {
+        "name": "Opening Shift 4",
+        "tasks": [{
+            "name": "Drink Water",
+            "description": "Take meds",
+            "rating": 3,
+            "off": false,
+            "nextDue": "Tomorrow",
+            "lastComplete": "Tomorrow",
+            "streak": 0,
+            "completions": {}
+        }, ]
+    },
+    {
+        "name": "Opening Shift 4",
+        "tasks": [{
+            "name": "Drink Water",
+            "description": "Take meds",
+            "rating": 3,
+            "off": false,
+            "nextDue": "Tomorrow",
+            "lastComplete": "Tomorrow",
+            "streak": 0,
+            "completions": {}
+        }, ]
+    },
+    {
+        "name": "Opening Shift 4",
+        "tasks": [{
+            "name": "Drink Water",
+            "description": "Take meds",
+            "rating": 3,
+            "off": false,
+            "nextDue": "Tomorrow",
+            "lastComplete": "Tomorrow",
+            "streak": 0,
+            "completions": {}
+        }, ]
+    },
+    {
+        "name": "Opening Shift 4",
+        "tasks": [{
+            "name": "Drink Water",
+            "description": "Take meds",
+            "rating": 3,
+            "off": false,
+            "nextDue": "Tomorrow",
+            "lastComplete": "Tomorrow",
+            "streak": 0,
+            "completions": {}
+        }, ]
+    },
+    {
+        "name": "Opening Shift 4",
+        "tasks": [{
+            "name": "Drink Water",
+            "description": "Take meds",
+            "rating": 3,
+            "off": false,
+            "nextDue": "Tomorrow",
+            "lastComplete": "Tomorrow",
+            "streak": 0,
+            "completions": {}
+        }, ]
+    },
+    {
+        "name": "Opening Shift 4",
+        "tasks": [{
+            "name": "Drink Water",
+            "description": "Take meds",
+            "rating": 3,
+            "off": false,
+            "nextDue": "Tomorrow",
+            "lastComplete": "Tomorrow",
+            "streak": 0,
+            "completions": {}
+        }, ]
+    },
+    {
+        "name": "Opening Shift 4",
+        "tasks": [{
+            "name": "Drink Water",
+            "description": "Take meds",
+            "rating": 3,
+            "off": false,
+            "nextDue": "Tomorrow",
+            "lastComplete": "Tomorrow",
+            "streak": 0,
+            "completions": {}
+        }, ]
+    },
+    {
+        "name": "Opening Shift 4",
+        "tasks": [{
+            "name": "Drink Water",
+            "description": "Take meds",
+            "rating": 3,
+            "off": false,
+            "nextDue": "Tomorrow",
+            "lastComplete": "Tomorrow",
+            "streak": 0,
+            "completions": {}
+        }, ]
+    },
+    {
+        "name": "Opening Shift 4",
+        "tasks": [{
+            "name": "Drink Water",
+            "description": "Take meds",
+            "rating": 3,
+            "off": false,
+            "nextDue": "Tomorrow",
+            "lastComplete": "Tomorrow",
+            "streak": 0,
+            "completions": {}
+        }, ]
+    },
+    {
+        "name": "Opening Shift 4",
+        "tasks": [{
+            "name": "Drink Water",
+            "description": "Take meds",
+            "rating": 3,
+            "off": false,
+            "nextDue": "Tomorrow",
+            "lastComplete": "Tomorrow",
+            "streak": 0,
+            "completions": {}
+        }, ]
+    },
+    {
+        "name": "Opening Shift 4",
+        "tasks": [{
+            "name": "Drink Water",
+            "description": "Take meds",
+            "rating": 3,
+            "off": false,
+            "nextDue": "Tomorrow",
+            "lastComplete": "Tomorrow",
+            "streak": 0,
+            "completions": {}
+        }, ]
+    },
+    
+    /*{
+        "name": "Closing Duties",
+        "tasks": [{
+                "name": "Phone, Meds, Alarm",
+                "description": "",
+                "rating": 3,
+                "off": false,
+                "lastComplete": "",
+                "streak": 0,
+                "completions": {}
+            },
+            {
+                "name": "Clean Off Desk",
+                "description": "",
+                "rating": 3,
+                "off": false,
+                "lastComplete": "",
+                "streak": 0,
+                "completions": {}
+            },
+            {
+                "name": "Pick Up Trash",
+                "description": "",
+                "rating": 3,
+                "off": false,
+                "lastComplete": "",
+                "streak": 0,
+                "completions": {}
+            },
+            {
+                "name": "Refill Waters",
+                "description": "",
+                "rating": 3,
+                "off": false,
+                "lastComplete": "",
+                "streak": 0,
+                "completions": {}
+            },
+        ]
+    }*/
+];
 
 function App() {
     return (
@@ -23,7 +234,13 @@ function App() {
                 Task Tracker
             </header>
             <div className='App-content-wrapper'>
-                <div className='App-sidebar'></div>
+                <div className='App-sidebar'>
+                    <div>Inbox</div>
+                    <div>Today</div>
+                    <div>Upcoming</div>
+                    <div>Opening Shift</div>
+                    <div>Closing Duties</div>
+                </div>
                 <div className='App-break'></div>
                 <div className='App-body'>
                 {tasks.map((category) => (

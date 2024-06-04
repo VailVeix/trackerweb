@@ -33,14 +33,9 @@ const taskRatingToColor = (rating) => {
             return classStyle + "bluer";
         case 8:
             return classStyle + "purple";
+        default:
+            return classStyle + "off";
     }
-}
-
-const lastCompleteDate = (date) => {
-    if (date == "")
-        return "";
-    else
-        return "Last Completed: " + date;
 }
 
 function Task(props) {
@@ -53,15 +48,18 @@ function Task(props) {
 
     const classes = useStyles();
 
+    if(props.taskInfo.off)
+        return("");
+
     return (
-        <div className={`Task-container ${cardState ? "" : "Task-container-off"}`} >
+        <div className='Task-container'>
             <div className={`Task-button-container ${cardState ? cardColor : "Task-button-container-off"}`}>
                 <Button className={`Task-button ${cardState ? "" : "Task-button-off"} ${classes.Button}`} onClick={buttonPush}></Button>
             </div>
             <div className='Task-info-container'>
                 <div className='Task-name'>{props.taskInfo.name}</div>
                 <div className='Task-description'>{props.taskInfo.description}</div>
-                <div className='Task-last-complete'>{lastCompleteDate(props.taskInfo.lastComplete)}</div>
+                <div className='Task-last-complete'>{props.taskInfo.lastComplete}</div>
             </div>
         </div >
     );

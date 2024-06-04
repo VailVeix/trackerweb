@@ -98,7 +98,7 @@ Button.Task-button-off{
 
 .Task-last-complete{
     font-size:xx-small;
-    font-style: italic;
-    color: rgb(121, 121, 121);
-    text-align: right;
+    color: rgb(14, 202, 39);
+    margin-left: 4px;
+    margin-bottom: 4px;
 }

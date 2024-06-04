@@ -40,4 +40,8 @@
     min-height: 100vh;
     left: 0;
     position: fixed;
+    padding-left: 16px;
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
 }
