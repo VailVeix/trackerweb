@@ -42,8 +42,14 @@ function Task(props) {
     const [cardState, setCardState] = useState(!props.taskInfo.off);
     const [cardColor] = useState(taskRatingToColor(props.taskInfo.rating));
 
-    const buttonPush = () => {
+    const completeTask = () => {
         setCardState(!cardState);
+        if(cardState){
+            props.taskInfo.streak++;
+        }
+        else{
+            props.taskInfo.streak--;
+        }
     }
 
     const classes = useStyles();
@@ -52,14 +58,14 @@ function Task(props) {
         return("");
 
     return (
-        <div className='Task-container'>
+        <div className='Task-container' onClick={completeTask}>
             <div className={`Task-button-container ${cardState ? cardColor : "Task-button-container-off"}`}>
-                <Button className={`Task-button ${cardState ? "" : "Task-button-off"} ${classes.Button}`} onClick={buttonPush}></Button>
+                <Button className={`Task-button ${cardState ? "" : "Task-button-off"} ${classes.Button}`}></Button>
             </div>
             <div className='Task-info-container'>
                 <div className='Task-name'>{props.taskInfo.name}</div>
                 <div className='Task-description'>{props.taskInfo.description}</div>
-                <div className='Task-last-complete'>{props.taskInfo.lastComplete}</div>
+                <div className='Task-description'>{props.taskInfo.streak}</div>
             </div>
         </div >
     );
