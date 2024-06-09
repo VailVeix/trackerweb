@@ -13,11 +13,6 @@ function Category(props) {
                         <Task taskInfo={task} />
                     ))}
                 </div>
-                <div className='Task-new-container'>
-                    <form>
-                        <textarea className='Task-new' rows='1' name="Task-new" placeholder="Add task" />
-                    </form>
-                </div>
             </Card>
         </div>
     );
