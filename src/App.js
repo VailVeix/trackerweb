@@ -2,19 +2,29 @@ import React from 'react';
 import Category from './Category/Category.js';
 import './App.css';
 
-const tasks = [{
-        "name": "Opening Shift",
-        "tasks": [{
-            "name": "Drink Water",
-            "description": "Take meds",
-            "rating": 3,
-            "off": false,
-            "nextDue": "Tomorrow",
-            "lastComplete": "Tomorrow",
-            "streak": 0,
-            "completions": {}
-        }, ]
-    }];
+const info = {
+    "user_name": "Alex",
+    "last_update": "",
+    "categories": [
+        {
+            "name": "Weekly Cleaning",
+            "tasks": [
+                {
+                    "name": "Laundry",
+                    "description": "",
+                    "rating": 6,
+                    "off": false,
+                    "nextDue": "Tomorrow",
+                    "lastComplete": "Tomorrow",
+                    "streak": 0,
+                    "completions": [
+                        {},
+                    ]
+                },
+            ]
+        },
+    ]
+};
 
 function App() {
     return (
@@ -27,9 +37,9 @@ function App() {
                 </div>
                 <div className='App-break'></div>
                 <div className='App-body'>
-                {tasks.map((category) => (
-                    <Category name={category.name} tasks={category.tasks} />
-                ))}
+                    {info.map((category) => (
+                        <Category name={category.name} tasks={category.tasks} />
+                    ))}
                 </div>
             </div>
         </div>
@@ -42,7 +52,6 @@ export default App;
 TODO LIST:
 right click- open edit window
 task text submit/make new task
-left click complete whole box
 #times complete counter
 move completed tasks to bottom, order by complete/not complete, then next due date
 add checkmark svg
