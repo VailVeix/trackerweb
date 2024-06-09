@@ -27,6 +27,30 @@ const info = {
 };
 
 function App() {
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [tasks, setTasks] = useState([]);
+
+    const [isSending, setIsSending] = useState(false);
+
+    const taskRequest = useCallback(async () => {
+        if (isSending) return;
+        setIsSending(true);
+        await fetch("http://vailveix.com/fetchTasks.php", {crossDomain: true})
+            .then(res => res.json())
+            .then(
+            (response) => {
+                setIsLoaded(true);
+                setTasks(response);
+            },
+            (error) => {
+                setIsLoaded(true);
+                setError(error);
+            }
+            )
+        setIsSending(false);
+    }, [isSending]);
+
     return (
         <div className="App">
             <header className="App-header">
