@@ -1,55 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Category from './Category/Category.js';
 import './App.css';
-
-const info = {
-    "user_name": "Alex",
-    "last_update": "",
-    "categories": [
-        {
-            "name": "Weekly Cleaning",
-            "tasks": [
-                {
-                    "name": "Laundry",
-                    "description": "",
-                    "rating": 6,
-                    "off": false,
-                    "nextDue": "Tomorrow",
-                    "lastComplete": "Tomorrow",
-                    "streak": 0,
-                    "completions": [
-                        {},
-                    ]
-                },
-            ]
-        },
-    ]
-};
 
 function App() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [tasks, setTasks] = useState([]);
+    const [info, setInfo] = useState([]);
 
-    const [isSending, setIsSending] = useState(false);
 
-    const taskRequest = useCallback(async () => {
-        if (isSending) return;
-        setIsSending(true);
-        await fetch("http://vailveix.com/fetchTasks.php", {crossDomain: true})
-            .then(res => res.json())
-            .then(
+    useEffect(() => {
+        fetch("http://vailveix.com/fetchTracker.php", {crossDomain: true})
+          .then(res => res.json())
+          .then(
             (response) => {
                 setIsLoaded(true);
-                setTasks(response);
+                setInfo(response);
             },
             (error) => {
                 setIsLoaded(true);
                 setError(error);
             }
-            )
-        setIsSending(false);
-    }, [isSending]);
+          )
+      }, [])
 
     return (
         <div className="App">
@@ -74,6 +46,16 @@ export default App;
 
 /*
 TODO LIST:
+Finish task and category data structures
+Have server return data correctly
+Correctly bring in data from server.
+update complete button to send to server
+update complete server script to use posted vars
+
+streak functionality
+create functions for updating last complete, total completions
+
+
 right click- open edit window
 task text submit/make new task
 #times complete counter
