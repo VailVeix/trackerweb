@@ -1,6 +1,6 @@
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './Task.css';
 
 const useStyles = makeStyles(() => ({
@@ -43,34 +43,29 @@ function Task(props) {
     const [cardColor] = useState(taskRatingToColor(props.taskInfo.rating));
 
     const [isSending, setIsSending] = useState(false);
+    const [error, setError] = useState(null);
 
-    const completeTask = () => {
-        setCardState(!cardState);
-        if(cardState){
-            props.taskInfo.streak++;
-        }
-        else{
-            props.taskInfo.streak--;
-        }
-
-        useCallback(async () => {
-            if (isSending) return;
-            setIsSending(true);
-            await fetch("http://vailveix.com/completeTask.php", {crossDomain: true, body: JSON.stringify({task_id: props.taskInfo.id})})
-                .then(res => res.json())
-                .then(
-                (response) => {
-                    setIsLoaded(true);
-                    setRows(response);
+    const completeTask = useCallback(async () => {
+        if (isSending) return;
+        setIsSending(true);
+        await fetch("http://vailveix.com/completeTask.php", {method: "POST", crossDomain: true, body: JSON.stringify({task_id: props.taskInfo.id})})
+            .then(res => res.json())
+            .then(
+                () => {
+                    setCardState(!cardState);
+                    if(cardState){
+                        props.taskInfo.streak++;
+                    }
+                    else{
+                        props.taskInfo.streak--;
+                    }
                 },
                 (error) => {
-                    setIsLoaded(true);
                     setError(error);
                 }
-                )
-            setIsSending(false);
-        }, [isSending]);
-    }
+            )
+        setIsSending(false);
+    }, [isSending]);
 
     const classes = useStyles();
 
