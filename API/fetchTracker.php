@@ -5,19 +5,19 @@ require_once("lib/Category.php");
 
 $response = array();
 
-$stmt = $db->prepare('SELECT name, id FROM categories WHERE 1 order by order_by desc');
-$stmt->execute();
-$stmt->setFetchMode(PDO::FETCH_CLASS, 'Category');
-while($category = $stmt->fetch()){
+$categoryQuery = $db->prepare('SELECT name, id FROM categories WHERE 1 order by order_by desc');
+$categoryQuery->execute();
+$categoryQuery->setFetchMode(PDO::FETCH_CLASS, 'Category');
+while($category = $categoryQuery->fetch()){
 
-    $stmt = $db->prepare('SELECT name, description, id FROM tasks WHERE category=? order by order_by desc');
-    $stmt->execute([$category->getID()]);
-    $stmt->setFetchMode(PDO::FETCH_CLASS, 'Task');
+    $taskQuery = $db->prepare('SELECT name, description, id FROM tasks WHERE category=? order by order_by desc');
+    $taskQuery->execute([$category->getID()]);
+    $taskQuery->setFetchMode(PDO::FETCH_CLASS, 'Task');
 
-    while($task = $stmt->fetch()){
+    while($task = $taskQuery->fetch()){
         $category->addTask($task);
     }
 
-    array_push($response, $category);
+    array_push($response, $category->jsonSerialize());
 }
 echo json_encode($response);
