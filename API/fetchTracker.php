@@ -1,7 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 require_once("includes/db_connect.php");
-
 require_once("lib/Category.php");
 
 $response = array();
