@@ -6,6 +6,8 @@ class Task{
 
     public $description;
 
+    public $id;
+
     public function __construct($info = NULL){
         if($info == NULL){
             return;

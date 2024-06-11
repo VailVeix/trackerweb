@@ -42,6 +42,8 @@ function Task(props) {
     const [cardState, setCardState] = useState(!props.taskInfo.off);
     const [cardColor] = useState(taskRatingToColor(props.taskInfo.rating));
 
+    const [isSending, setIsSending] = useState(false);
+
     const completeTask = () => {
         setCardState(!cardState);
         if(cardState){
@@ -50,6 +52,24 @@ function Task(props) {
         else{
             props.taskInfo.streak--;
         }
+
+        useCallback(async () => {
+            if (isSending) return;
+            setIsSending(true);
+            await fetch("http://vailveix.com/completeTask.php", {crossDomain: true, body: JSON.stringify({task_id: props.taskInfo.id})})
+                .then(res => res.json())
+                .then(
+                (response) => {
+                    setIsLoaded(true);
+                    setRows(response);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+                )
+            setIsSending(false);
+        }, [isSending]);
     }
 
     const classes = useStyles();

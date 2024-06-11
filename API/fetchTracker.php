@@ -11,7 +11,7 @@ $stmt->execute();
 $stmt->setFetchMode(PDO::FETCH_CLASS, 'Category');
 while($category = $stmt->fetch()){
 
-    $stmt = $db->prepare('SELECT name, description FROM tasks WHERE category=? order by order_by desc');
+    $stmt = $db->prepare('SELECT name, description, id FROM tasks WHERE category=? order by order_by desc');
     $stmt->execute([$category->getID()]);
     $stmt->setFetchMode(PDO::FETCH_CLASS, 'Task');
 
